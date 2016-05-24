@@ -296,7 +296,7 @@
 <pin name="VSS1" x="-45.72" y="7.62" visible="pin" length="middle" direction="pwr"/>
 <pin name="VDD1" x="-45.72" y="5.08" visible="pin" length="middle" direction="sup"/>
 <pin name="PH0-OSC_IN" x="-45.72" y="2.54" visible="pin" length="middle"/>
-<pin name="PH1-OSC_IN" x="-45.72" y="0" visible="pin" length="middle"/>
+<pin name="PH1-OSC_OUT" x="-45.72" y="0" visible="pin" length="middle"/>
 <pin name="NRST" x="-45.72" y="-2.54" visible="pin" length="middle"/>
 <pin name="PC0" x="-45.72" y="-5.08" visible="pin" length="middle"/>
 <pin name="PC1" x="-45.72" y="-7.62" visible="pin" length="middle"/>
@@ -361,8 +361,8 @@
 <pin name="PA12" x="45.72" y="20.32" visible="pin" length="middle" rot="R180"/>
 <pin name="PA13" x="45.72" y="22.86" visible="pin" length="middle" rot="R180"/>
 <pin name="VCAP2" x="45.72" y="25.4" visible="pin" length="middle" rot="R180"/>
-<pin name="VSS5" x="45.72" y="27.94" visible="pin" length="middle" direction="pwr" rot="R180"/>
-<pin name="VDD5" x="45.72" y="30.48" visible="pin" length="middle" direction="sup" rot="R180"/>
+<pin name="VSS5" x="-25.4" y="45.72" visible="pin" length="middle" direction="pwr" rot="R270"/>
+<pin name="VDD5" x="-27.94" y="45.72" visible="pin" length="middle" direction="sup" rot="R270"/>
 <pin name="PA14" x="33.02" y="45.72" visible="pin" length="middle" rot="R270"/>
 <pin name="PA15" x="30.48" y="45.72" visible="pin" length="middle" rot="R270"/>
 <pin name="PC10" x="27.94" y="45.72" visible="pin" length="middle" rot="R270"/>
@@ -386,8 +386,8 @@
 <pin name="PB9" x="-17.78" y="45.72" visible="pin" length="middle" rot="R270"/>
 <pin name="PE0" x="-20.32" y="45.72" visible="pin" length="middle" rot="R270"/>
 <pin name="PE1" x="-22.86" y="45.72" visible="pin" length="middle" rot="R270"/>
-<pin name="VSS4" x="-25.4" y="45.72" visible="pin" length="middle" direction="pwr" rot="R270"/>
-<pin name="VDD4" x="-27.94" y="45.72" visible="pin" length="middle" direction="sup" rot="R270"/>
+<pin name="VSS4" x="45.72" y="27.94" visible="pin" length="middle" direction="pwr" rot="R180"/>
+<pin name="VDD4" x="45.72" y="30.48" visible="pin" length="middle" direction="sup" rot="R180"/>
 <text x="-7.62" y="10.16" size="1.778" layer="95">&gt;NAME</text>
 <text x="-7.62" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
 <circle x="-27.94" y="27.94" radius="2.54" width="0.254" layer="97"/>
@@ -462,9 +462,9 @@
 <connect gate="G$1" pin="PD2" pad="83"/>
 <connect gate="G$1" pin="PD3" pad="84"/>
 <connect gate="G$1" pin="PD4" pad="85"/>
-<connect gate="G$1" pin="PD5" pad="87"/>
-<connect gate="G$1" pin="PD6" pad="88"/>
-<connect gate="G$1" pin="PD7" pad="86"/>
+<connect gate="G$1" pin="PD5" pad="86"/>
+<connect gate="G$1" pin="PD6" pad="87"/>
+<connect gate="G$1" pin="PD7" pad="88"/>
 <connect gate="G$1" pin="PD8" pad="55"/>
 <connect gate="G$1" pin="PD9" pad="56"/>
 <connect gate="G$1" pin="PE0" pad="97"/>
@@ -484,7 +484,7 @@
 <connect gate="G$1" pin="PE8" pad="38"/>
 <connect gate="G$1" pin="PE9" pad="39"/>
 <connect gate="G$1" pin="PH0-OSC_IN" pad="12"/>
-<connect gate="G$1" pin="PH1-OSC_IN" pad="13"/>
+<connect gate="G$1" pin="PH1-OSC_OUT" pad="13"/>
 <connect gate="G$1" pin="VBAT" pad="6"/>
 <connect gate="G$1" pin="VCAP1" pad="48"/>
 <connect gate="G$1" pin="VCAP2" pad="73"/>

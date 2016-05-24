@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="mm" style="dots" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="mm"/>
+<grid distance="0.635" unitdist="mm" unit="mm" style="dots" multiple="1" display="yes" altdistance="0.635" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -58,7 +62,6 @@
 <layer number="96" name="Values" color="7" fill="1" visible="no" active="no"/>
 <layer number="97" name="Info" color="7" fill="1" visible="no" active="no"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="no" active="no"/>
-<layer number="99" name="SpiceOrder" color="5" fill="1" visible="no" active="no"/>
 <layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
 <layer number="101" name="Patch_Top" color="12" fill="4" visible="yes" active="yes"/>
 <layer number="102" name="Vscore" color="7" fill="1" visible="yes" active="yes"/>
@@ -124,22 +127,21 @@
 </layers>
 <board>
 <plain>
-<circle x="50" y="50" radius="48.5" width="1.27" layer="41"/>
-<circle x="50" y="50" radius="45.5" width="1.27" layer="41"/>
-<circle x="50" y="50" radius="39.5" width="1.27" layer="41"/>
-<circle x="50" y="50" radius="43" width="1.27" layer="41"/>
-<wire x1="21" y1="21" x2="21" y2="79" width="0.254" layer="208"/>
-<wire x1="21" y1="79" x2="79" y2="79" width="0.254" layer="208"/>
-<wire x1="79" y1="79" x2="79" y2="21" width="0.254" layer="208"/>
-<wire x1="79" y1="21" x2="58" y2="21" width="0.254" layer="208"/>
-<hole x="23" y="50" drill="3.2"/>
-<hole x="76" y="50" drill="3.2"/>
+<wire x1="21" y1="21" x2="42" y2="21" width="0.4064" layer="40"/>
+<wire x1="42" y1="21" x2="58" y2="21" width="0.4064" layer="40"/>
+<wire x1="58" y1="21" x2="79" y2="21" width="0.4064" layer="40"/>
+<wire x1="79" y1="21" x2="79" y2="79" width="0.4064" layer="40"/>
+<wire x1="79" y1="79" x2="21" y2="79" width="0.4064" layer="40"/>
+<wire x1="21" y1="79" x2="21" y2="21" width="0.4064" layer="40"/>
+<wire x1="42" y1="21" x2="42" y2="41" width="0.4064" layer="40"/>
+<wire x1="42" y1="41" x2="58" y2="41" width="0.4064" layer="40"/>
+<wire x1="58" y1="41" x2="58" y2="21" width="0.4064" layer="40"/>
+<rectangle x1="61.595" y1="55.245" x2="68.58" y2="70.485" layer="40"/>
+<hole x="24" y="50" drill="3.2"/>
 <hole x="50" y="76" drill="3.2"/>
-<wire x1="58" y1="21" x2="42" y2="21" width="1.27" layer="208"/>
-<wire x1="42" y1="21" x2="21" y2="21" width="1.27" layer="208"/>
-<wire x1="42" y1="21" x2="42" y2="41" width="1.27" layer="208"/>
-<wire x1="42" y1="41" x2="58" y2="41" width="1.27" layer="208"/>
-<wire x1="58" y1="41" x2="58" y2="21" width="1.27" layer="208"/>
+<hole x="76" y="50.165" drill="3.2"/>
+<text x="62.23" y="49.53" size="1.778" layer="39">Mosfets</text>
+<text x="24.765" y="43.815" size="1.778" layer="39">USB-Datenleitung</text>
 </plain>
 <libraries>
 <library name="WS2812B">
@@ -380,48 +382,111 @@
 </package>
 </packages>
 </library>
-<library name="div">
+<library name="RASM7X2">
+<description>&lt;b&gt;Jacks&lt;/b&gt;&lt;p&gt;
+Power Connectors&lt;br&gt;
+Phone Connectors&lt;br&gt;
+Cinch Connectors&lt;br&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
-<package name="USB-B-SMD">
-<wire x1="-9.0009" y1="6.0059" x2="7.0011" y2="6.0059" width="0.1016" layer="21"/>
-<wire x1="7.0011" y1="6.0059" x2="7.0011" y2="-6.0064" width="0.1016" layer="21"/>
-<wire x1="7.0011" y1="-6.0064" x2="-9.0009" y2="-6.0064" width="0.1016" layer="21"/>
-<wire x1="-9.0009" y1="-6.0064" x2="-9.0009" y2="6.0059" width="0.1016" layer="21"/>
-<wire x1="6" y1="0.5" x2="4.5" y2="0.5" width="0.127" layer="21"/>
-<wire x1="6" y1="-0.5" x2="4.5" y2="-0.5" width="0.127" layer="21"/>
-<wire x1="4.5" y1="0.5" x2="4.5" y2="-0.5" width="0.127" layer="21"/>
-<wire x1="3.1" y1="-6.05" x2="3.1" y2="-7.6" width="0.127" layer="21"/>
-<wire x1="-1.95" y1="-7.55" x2="-1.95" y2="-6.05" width="0.127" layer="21"/>
-<wire x1="-1.4" y1="-8.15" x2="-1.95" y2="-7.55" width="0.127" layer="21" curve="-90"/>
-<wire x1="3.1" y1="-7.6" x2="2.5" y2="-8.15" width="0.127" layer="21" curve="-90"/>
-<wire x1="-1.4" y1="-8.15" x2="-0.65" y2="-8.15" width="0.127" layer="21"/>
-<wire x1="1.75" y1="-8.15" x2="2.5" y2="-8.15" width="0.127" layer="21"/>
-<wire x1="-0.65" y1="-8.15" x2="-0.25" y2="-7.05" width="0.127" layer="21"/>
-<wire x1="1.35" y1="-7.05" x2="1.75" y2="-8.15" width="0.127" layer="21"/>
-<wire x1="-0.25" y1="-7.05" x2="1.35" y2="-7.05" width="0.127" layer="21"/>
-<wire x1="-0.25" y1="7.05" x2="1.35" y2="7.05" width="0.127" layer="21"/>
-<wire x1="-0.65" y1="8.15" x2="-0.25" y2="7.05" width="0.127" layer="21"/>
-<wire x1="-1.4" y1="8.15" x2="-0.65" y2="8.15" width="0.127" layer="21"/>
-<wire x1="1.35" y1="7.05" x2="1.75" y2="8.15" width="0.127" layer="21"/>
-<wire x1="1.75" y1="8.15" x2="2.5" y2="8.15" width="0.127" layer="21"/>
-<wire x1="3.1" y1="7.6" x2="3.1" y2="6.05" width="0.127" layer="21"/>
-<wire x1="2.5" y1="8.15" x2="3.1" y2="7.6" width="0.127" layer="21" curve="-94.979106"/>
-<wire x1="-1.95" y1="6.05" x2="-1.95" y2="7.55" width="0.127" layer="21"/>
-<wire x1="-1.95" y1="7.55" x2="-1.4" y2="8.15" width="0.127" layer="21" curve="-90"/>
-<smd name="M1" x="0.58" y="-6.8" dx="3.4" dy="6.04" layer="1" rot="R90"/>
-<smd name="M2" x="0.58" y="6.8" dx="3.4" dy="6.04" layer="1" rot="R90"/>
-<smd name="2" x="7" y="0.625" dx="3" dy="0.7" layer="1"/>
-<smd name="1" x="7" y="1.875" dx="3" dy="0.7" layer="1"/>
-<smd name="3" x="7" y="-0.625" dx="3" dy="0.7" layer="1"/>
-<smd name="4" x="7" y="-1.875" dx="3" dy="0.7" layer="1"/>
-<text x="10.185" y="-6.11" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="-9.045" y="-10.035" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="7.055" y1="1.575" x2="8.205" y2="2.175" layer="21"/>
-<rectangle x1="7.055" y1="0.325" x2="8.205" y2="0.925" layer="21"/>
-<rectangle x1="7.055" y1="-0.925" x2="8.205" y2="-0.325" layer="21"/>
-<rectangle x1="7.055" y1="-2.175" x2="8.205" y2="-1.575" layer="21"/>
-<hole x="0" y="-2.75" drill="1.5"/>
-<hole x="0" y="2.75" drill="1.5"/>
+<package name="RASM7X2">
+<description>&lt;b&gt;DC POWER JACK&lt;/b&gt; Pad shape changed to LONG 2007.07.26&lt;p&gt;
+Source: DCJ0303.pdf</description>
+<wire x1="-4.1" y1="-10.3" x2="4.4" y2="-10.3" width="0.2032" layer="21"/>
+<wire x1="4.4" y1="-10.2" x2="4.4" y2="3.7" width="0.2032" layer="51"/>
+<wire x1="4.4" y1="3.7" x2="-4.1" y2="3.7" width="0.2032" layer="51"/>
+<wire x1="-4.1" y1="3.7" x2="-4.1" y2="-10.3" width="0.2032" layer="21"/>
+<wire x1="-2" y1="3.7" x2="-4.1" y2="3.7" width="0.2032" layer="21"/>
+<wire x1="4.4" y1="3.7" x2="1.9" y2="3.7" width="0.2032" layer="21"/>
+<wire x1="-3" y1="-10.275" x2="-3" y2="-3" width="0.2032" layer="51" style="shortdash"/>
+<wire x1="3" y1="-10.3" x2="3" y2="-3" width="0.2032" layer="51" style="shortdash"/>
+<wire x1="3" y1="-3" x2="-3" y2="-3" width="0.2032" layer="51" style="shortdash"/>
+<wire x1="-0.9" y1="-9" x2="-0.9" y2="-4.5" width="0.2032" layer="51" style="shortdash"/>
+<wire x1="0.9" y1="-9" x2="0.9" y2="-4.5" width="0.2032" layer="51" style="shortdash"/>
+<wire x1="-0.9" y1="-9" x2="0.9" y2="-9" width="0.2032" layer="51" curve="166.57811"/>
+<wire x1="4.4" y1="-10.3" x2="4.4" y2="-2.45" width="0.2032" layer="21"/>
+<wire x1="4.4" y1="2.3" x2="4.4" y2="3.7" width="0.2032" layer="21"/>
+<text x="6.35" y="-10.16" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="-5.08" y="-10.16" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<smd name="P$1" x="-6.2" y="-3.6" dx="4" dy="6.4" layer="1" rot="R180"/>
+<smd name="P$2" x="6.35" y="-3.6" dx="3.7" dy="6.4" layer="1" rot="R180"/>
+<smd name="P$3" x="0.8" y="5.85" dx="2.8" dy="4.06" layer="1"/>
+</package>
+</packages>
+</library>
+<library name="usb">
+<packages>
+<package name="USB-B-SMT">
+<description>USB Series B Surface Mounted</description>
+<wire x1="-1" y1="-6" x2="2.4" y2="-6" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="6" x2="-1" y2="6" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="6" x2="2.4" y2="7.3" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="7.3" x2="2.2" y2="7.5" width="0.2032" layer="51"/>
+<wire x1="2.2" y1="7.5" x2="1.9" y2="7.5" width="0.2032" layer="51"/>
+<wire x1="1.9" y1="7.5" x2="1.4" y2="7" width="0.2032" layer="51"/>
+<wire x1="-1" y1="6" x2="-1" y2="7.3" width="0.2032" layer="51"/>
+<wire x1="-0.8" y1="7.5" x2="-0.5" y2="7.5" width="0.2032" layer="51"/>
+<wire x1="-0.5" y1="7.5" x2="0" y2="7" width="0.2032" layer="51"/>
+<wire x1="0" y1="7" x2="1.4" y2="7" width="0.2032" layer="51"/>
+<wire x1="-1" y1="-6" x2="-1" y2="-7.3" width="0.2032" layer="51"/>
+<wire x1="-1" y1="-7.3" x2="-0.8" y2="-7.5" width="0.2032" layer="51"/>
+<wire x1="-0.8" y1="-7.5" x2="-0.5" y2="-7.5" width="0.2032" layer="51"/>
+<wire x1="-0.5" y1="-7.5" x2="0" y2="-7" width="0.2032" layer="51"/>
+<wire x1="1.9" y1="-7.5" x2="1.4" y2="-7" width="0.2032" layer="51"/>
+<wire x1="1.4" y1="-7" x2="0" y2="-7" width="0.2032" layer="51"/>
+<wire x1="-1" y1="7.3" x2="-0.8" y2="7.5" width="0.2032" layer="51"/>
+<wire x1="2.2" y1="-7.5" x2="1.9" y2="-7.5" width="0.2032" layer="51"/>
+<wire x1="2.2" y1="-7.5" x2="2.4" y2="-7.3" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-6" x2="2.4" y2="-7.3" width="0.2032" layer="51"/>
+<wire x1="-5" y1="6" x2="-5" y2="-6" width="0.2032" layer="51"/>
+<wire x1="-5" y1="6" x2="-9" y2="6" width="0.2032" layer="51"/>
+<wire x1="-9" y1="6" x2="-9" y2="-6" width="0.2032" layer="51"/>
+<wire x1="-9" y1="-6" x2="-5" y2="-6" width="0.2032" layer="51"/>
+<wire x1="-5" y1="6" x2="-3" y2="6" width="0.2032" layer="21"/>
+<wire x1="-5" y1="-6" x2="-3" y2="-6" width="0.2032" layer="21"/>
+<wire x1="4" y1="-6" x2="7" y2="-6" width="0.2032" layer="21"/>
+<wire x1="7" y1="-6" x2="7" y2="-3" width="0.2032" layer="21"/>
+<wire x1="7" y1="3" x2="7" y2="6" width="0.2032" layer="21"/>
+<wire x1="7" y1="6" x2="4" y2="6" width="0.2032" layer="21"/>
+<smd name="5" x="0.58" y="6.8" dx="6.04" dy="3.4" layer="1"/>
+<smd name="6" x="0.58" y="-6.8" dx="6.04" dy="3.4" layer="1"/>
+<smd name="D+" x="7" y="1.875" dx="3" dy="0.7" layer="1"/>
+<smd name="D-" x="7" y="0.625" dx="3" dy="0.7" layer="1"/>
+<smd name="GND" x="7" y="-0.625" dx="3" dy="0.7" layer="1"/>
+<smd name="VUSB" x="7" y="-1.875" dx="3" dy="0.7" layer="1"/>
+<text x="4.3" y="-7.795" size="1.27" layer="25">&gt;NAME</text>
+<hole x="0" y="2.25" drill="1.4"/>
+<hole x="0" y="-2.25" drill="1.4"/>
+</package>
+</packages>
+</library>
+<library name="linear-technology">
+<description>&lt;b&gt;Linear Technology Devices&lt;/b&gt;&lt;p&gt;
+http://www.linear-tech.com&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="TSOT23-6">
+<description>&lt;b&gt;S6 Package 6-Lead Plastic TSOT-23&lt;/b&gt;&lt;p&gt;
+Source: http://cds.linear.com/docs/Datasheet/623012fb.pdf</description>
+<wire x1="1.422" y1="-0.781" x2="-1.423" y2="-0.781" width="0.1524" layer="51"/>
+<wire x1="-1.423" y1="-0.781" x2="-1.423" y2="0.781" width="0.1524" layer="21"/>
+<wire x1="-1.423" y1="0.781" x2="1.422" y2="0.781" width="0.1524" layer="51"/>
+<wire x1="1.422" y1="0.781" x2="1.422" y2="-0.781" width="0.1524" layer="21"/>
+<circle x="-1.15" y="-0.5" radius="0.1" width="0" layer="21"/>
+<smd name="1" x="-0.95" y="-1.3" dx="0.62" dy="1.22" layer="1"/>
+<smd name="2" x="0" y="-1.3" dx="0.62" dy="1.22" layer="1"/>
+<smd name="3" x="0.95" y="-1.3" dx="0.62" dy="1.22" layer="1"/>
+<smd name="4" x="0.95" y="1.3" dx="0.62" dy="1.22" layer="1"/>
+<smd name="5" x="0" y="1.3" dx="0.62" dy="1.22" layer="1"/>
+<smd name="6" x="-0.95" y="1.3" dx="0.62" dy="1.22" layer="1"/>
+<text x="2.8575" y="-1.5875" size="1.016" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+<text x="-1.5875" y="-1.5875" size="1.016" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<rectangle x1="-1.175" y1="-1.4" x2="-0.725" y2="-0.8" layer="51"/>
+<rectangle x1="-0.225" y1="-1.4" x2="0.225" y2="-0.8" layer="51"/>
+<rectangle x1="0.725" y1="-1.4" x2="1.175" y2="-0.8" layer="51"/>
+<rectangle x1="0.725" y1="0.8" x2="1.175" y2="1.4" layer="51"/>
+<rectangle x1="-0.225" y1="0.8" x2="0.225" y2="1.4" layer="51"/>
+<rectangle x1="-1.175" y1="0.8" x2="-0.725" y2="1.4" layer="51"/>
 </package>
 </packages>
 </library>
@@ -429,6 +494,33 @@
 <description>&lt;b&gt;Analog Devices Components&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
 <packages>
+<package name="SOT23-5">
+<description>&lt;b&gt;5-Lead Small Outline Transistor&lt;/b&gt; Package SOT-23&lt;p&gt;
+Source: http://www.analog.com/UploadedFiles/Data_Sheets/346131962AD8067_a.pdf</description>
+<wire x1="1.372" y1="0.735" x2="1.372" y2="-0.735" width="0.1524" layer="21"/>
+<wire x1="1.372" y1="-0.735" x2="-1.372" y2="-0.735" width="0.1524" layer="51"/>
+<wire x1="-1.372" y1="-0.735" x2="-1.372" y2="0.735" width="0.1524" layer="21"/>
+<wire x1="-1.372" y1="0.735" x2="1.372" y2="0.735" width="0.1524" layer="51"/>
+<wire x1="-0.522" y1="0.735" x2="0.522" y2="0.735" width="0.1524" layer="21"/>
+<wire x1="-0.428" y1="-0.735" x2="-0.522" y2="-0.735" width="0.1524" layer="21"/>
+<wire x1="0.522" y1="-0.735" x2="0.428" y2="-0.735" width="0.1524" layer="21"/>
+<wire x1="-1.328" y1="-0.735" x2="-1.372" y2="-0.735" width="0.1524" layer="21"/>
+<wire x1="1.372" y1="-0.735" x2="1.328" y2="-0.735" width="0.1524" layer="21"/>
+<wire x1="1.328" y1="0.735" x2="1.372" y2="0.735" width="0.1524" layer="21"/>
+<wire x1="-1.372" y1="0.735" x2="-1.328" y2="0.735" width="0.1524" layer="21"/>
+<smd name="1" x="-0.95" y="-1.3" dx="0.55" dy="1.2" layer="1"/>
+<smd name="2" x="0" y="-1.3" dx="0.55" dy="1.2" layer="1"/>
+<smd name="3" x="0.95" y="-1.3" dx="0.55" dy="1.2" layer="1"/>
+<smd name="4" x="0.95" y="1.3" dx="0.55" dy="1.2" layer="1"/>
+<smd name="5" x="-0.95" y="1.3" dx="0.55" dy="1.2" layer="1"/>
+<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.905" y="-3.429" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.2" y1="-1.425" x2="-0.7" y2="-0.775" layer="51"/>
+<rectangle x1="-0.25" y1="-1.425" x2="0.25" y2="-0.775" layer="51"/>
+<rectangle x1="0.7" y1="-1.425" x2="1.2" y2="-0.775" layer="51"/>
+<rectangle x1="0.7" y1="0.775" x2="1.2" y2="1.425" layer="51"/>
+<rectangle x1="-1.2" y1="0.775" x2="-0.7" y2="1.425" layer="51"/>
+</package>
 <package name="SO14">
 <description>&lt;b&gt;14-Lead Narrow-Body SOIC&lt;/b&gt; (SO-14)&lt;p&gt;
 Source: http://www.analog.com/static/imported-files/data_sheets/SSM2166.pdf</description>
@@ -472,39 +564,9 @@ Source: http://www.analog.com/static/imported-files/data_sheets/SSM2166.pdf</des
 </package>
 </packages>
 </library>
-<library name="linear-technology">
-<description>&lt;b&gt;Linear Technology Devices&lt;/b&gt;&lt;p&gt;
-http://www.linear-tech.com&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="TSOT23-6">
-<description>&lt;b&gt;S6 Package 6-Lead Plastic TSOT-23&lt;/b&gt;&lt;p&gt;
-Source: http://cds.linear.com/docs/Datasheet/623012fb.pdf</description>
-<wire x1="1.422" y1="-0.781" x2="-1.423" y2="-0.781" width="0.1524" layer="51"/>
-<wire x1="-1.423" y1="-0.781" x2="-1.423" y2="0.781" width="0.1524" layer="21"/>
-<wire x1="-1.423" y1="0.781" x2="1.422" y2="0.781" width="0.1524" layer="51"/>
-<wire x1="1.422" y1="0.781" x2="1.422" y2="-0.781" width="0.1524" layer="21"/>
-<circle x="-1.15" y="-0.5" radius="0.1" width="0" layer="21"/>
-<smd name="1" x="-0.95" y="-1.3" dx="0.62" dy="1.22" layer="1"/>
-<smd name="2" x="0" y="-1.3" dx="0.62" dy="1.22" layer="1"/>
-<smd name="3" x="0.95" y="-1.3" dx="0.62" dy="1.22" layer="1"/>
-<smd name="4" x="0.95" y="1.3" dx="0.62" dy="1.22" layer="1"/>
-<smd name="5" x="0" y="1.3" dx="0.62" dy="1.22" layer="1"/>
-<smd name="6" x="-0.95" y="1.3" dx="0.62" dy="1.22" layer="1"/>
-<text x="2.8575" y="-1.5875" size="1.016" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
-<text x="-1.5875" y="-1.5875" size="1.016" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<rectangle x1="-1.175" y1="-1.4" x2="-0.725" y2="-0.8" layer="51"/>
-<rectangle x1="-0.225" y1="-1.4" x2="0.225" y2="-0.8" layer="51"/>
-<rectangle x1="0.725" y1="-1.4" x2="1.175" y2="-0.8" layer="51"/>
-<rectangle x1="0.725" y1="0.8" x2="1.175" y2="1.4" layer="51"/>
-<rectangle x1="-0.225" y1="0.8" x2="0.225" y2="1.4" layer="51"/>
-<rectangle x1="-1.175" y1="0.8" x2="-0.725" y2="1.4" layer="51"/>
-</package>
-</packages>
-</library>
 </libraries>
 <attributes>
-<attribute name="CIRCULAR-LAYOUT-SETTINGS" value="1.970000 1.970000 1.620000 0.000000 0 0"/>
+<attribute name="CIRCULAR-LAYOUT-SETTINGS" value="1.968500 1.968500 1.614200 0.000000 0 0"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -598,11 +660,8 @@ design rules under a new name.</description>
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="50mil"/>
-<param name="AutoGrid" value="1"/>
-<param name="Efforts" value="0"/>
-<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
-<param name="PrefDir.1" value="a"/>
+<param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
 <param name="PrefDir.3" value="0"/>
 <param name="PrefDir.4" value="0"/>
@@ -617,7 +676,7 @@ design rules under a new name.</description>
 <param name="PrefDir.13" value="0"/>
 <param name="PrefDir.14" value="0"/>
 <param name="PrefDir.15" value="0"/>
-<param name="PrefDir.16" value="a"/>
+<param name="PrefDir.16" value="-"/>
 <param name="cfVia" value="8"/>
 <param name="cfNonPref" value="5"/>
 <param name="cfChangeDir" value="2"/>
@@ -692,61 +751,74 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="E$1" library="WS2812B" package="WS2812B" value="" x="90.732534375" y="73.533" rot="R300"/>
-<element name="E$2" library="WS2812B" package="WS2812B" value="" x="94.72815625" y="64.558696875" rot="R288"/>
-<element name="E$3" library="WS2812B" package="WS2812B" value="" x="96.770596875" y="54.9498" rot="R276"/>
-<element name="E$4" library="WS2812B" package="WS2812B" value="" x="96.770596875" y="45.1262" rot="R264"/>
-<element name="E$5" library="WS2812B" package="WS2812B" value="" x="94.72815625" y="35.517303125" rot="R252"/>
-<element name="E$6" library="WS2812B" package="WS2812B" value="" x="90.732534375" y="26.543" rot="R240"/>
-<element name="E$7" library="WS2812B" package="WS2812B" value="" x="84.958378125" y="18.59554375" rot="R228"/>
-<element name="E$8" library="WS2812B" package="WS2812B" value="" x="77.6580375" y="12.022303125" rot="R216"/>
-<element name="E$9" library="WS2812B" package="WS2812B" value="" x="69.150559375" y="7.1105" rot="R204"/>
-<element name="E$10" library="WS2812B" package="WS2812B" value="" x="59.80778125" y="4.074846875" rot="R192"/>
-<element name="E$11" library="WS2812B" package="WS2812B" value="" x="50.038" y="3.048" rot="R180"/>
-<element name="E$12" library="WS2812B" package="WS2812B" value="" x="40.26821875" y="4.074846875" rot="R168"/>
-<element name="E$13" library="WS2812B" package="WS2812B" value="" x="30.925440625" y="7.1105" rot="R156"/>
-<element name="E$14" library="WS2812B" package="WS2812B" value="" x="22.4179625" y="12.022303125" rot="R144"/>
-<element name="E$15" library="WS2812B" package="WS2812B" value="" x="15.117621875" y="18.59554375" rot="R132"/>
-<element name="E$16" library="WS2812B" package="WS2812B" value="" x="9.343465625" y="26.543" rot="R120"/>
-<element name="E$17" library="WS2812B" package="WS2812B" value="" x="5.34784375" y="35.517303125" rot="R108"/>
-<element name="E$18" library="WS2812B" package="WS2812B" value="" x="3.305403125" y="45.1262" rot="R96"/>
-<element name="E$19" library="WS2812B" package="WS2812B" value="" x="3.305403125" y="54.9498" rot="R84"/>
-<element name="E$20" library="WS2812B" package="WS2812B" value="" x="5.34784375" y="64.558696875" rot="R72"/>
-<element name="E$21" library="WS2812B" package="WS2812B" value="" x="9.343465625" y="73.533" rot="R60"/>
-<element name="E$24" library="WS2812B" package="WS2812B" value="" x="82.854834375" y="74.50269375" rot="R306"/>
-<element name="E$25" library="WS2812B" package="WS2812B" value="" x="87.1559875" y="67.052921875" rot="R294"/>
-<element name="E$26" library="WS2812B" package="WS2812B" value="" x="89.814215625" y="58.871653125" rot="R282"/>
-<element name="E$27" library="WS2812B" package="WS2812B" value="" x="90.713396875" y="50.316509375" rot="R270"/>
-<element name="E$28" library="WS2812B" package="WS2812B" value="" x="89.8142375" y="41.761346875" rot="R258"/>
-<element name="E$29" library="WS2812B" package="WS2812B" value="" x="87.155971875" y="33.580109375" rot="R246"/>
-<element name="E$30" library="WS2812B" package="WS2812B" value="" x="82.854853125" y="26.1303125" rot="R234"/>
-<element name="E$31" library="WS2812B" package="WS2812B" value="" x="77.09879375" y="19.737571875" rot="R222"/>
-<element name="E$32" library="WS2812B" package="WS2812B" value="" x="70.1394" y="14.681284375" rot="R210"/>
-<element name="E$33" library="WS2812B" package="WS2812B" value="" x="62.28084375" y="11.1824375" rot="R198"/>
-<element name="E$34" library="WS2812B" package="WS2812B" value="" x="53.866546875" y="9.393921875" rot="R186"/>
-<element name="E$35" library="WS2812B" package="WS2812B" value="" x="45.26426875" y="9.393921875" rot="R174"/>
-<element name="E$36" library="WS2812B" package="WS2812B" value="" x="36.8499875" y="11.182425" rot="R162"/>
-<element name="E$37" library="WS2812B" package="WS2812B" value="" x="28.9914125" y="14.68128125" rot="R150"/>
-<element name="E$38" library="WS2812B" package="WS2812B" value="" x="22.0320125" y="19.737571875" rot="R138"/>
-<element name="E$39" library="WS2812B" package="WS2812B" value="" x="16.27598125" y="26.130321875" rot="R126"/>
-<element name="E$40" library="WS2812B" package="WS2812B" value="" x="11.97483125" y="33.58009375" rot="R114"/>
-<element name="E$41" library="WS2812B" package="WS2812B" value="" x="9.316603125" y="41.7613625" rot="R102"/>
-<element name="E$42" library="WS2812B" package="WS2812B" value="" x="8.417421875" y="50.31650625" rot="R90"/>
-<element name="E$43" library="WS2812B" package="WS2812B" value="" x="9.316578125" y="58.87166875" rot="R78"/>
-<element name="E$44" library="WS2812B" package="WS2812B" value="" x="11.97484375" y="67.052909375" rot="R66"/>
-<element name="E$22" library="STM32F407Vx_LQFP100" package="LQFP100" value="" x="34.29" y="57.15" rot="MR0"/>
-<element name="E$23" library="div" package="USB-B-SMD" value="" x="31.75" y="17.78" rot="MR90"/>
-<element name="E$45" library="analog-devices" package="SO14" value="" x="30.48" y="72.39" rot="MR0"/>
-<element name="E$46" library="linear-technology" package="TSOT23-6" value="" x="63.5" y="45.72" rot="MR0"/>
-<element name="E$47" library="linear-technology" package="TSOT23-6" value="" x="68.58" y="40.64" rot="MR90"/>
-<element name="E$48" library="linear-technology" package="TSOT23-6" value="" x="68.58" y="34.29" rot="MR90"/>
+<element name="E$1" library="WS2812B" package="WS2812B" value="" x="69.112459375" y="92.9274" rot="R336"/>
+<element name="E$2" library="WS2812B" package="WS2812B" value="" x="77.6199375" y="88.015596875" rot="R324"/>
+<element name="E$3" library="WS2812B" package="WS2812B" value="" x="84.920278125" y="81.44235625" rot="R312"/>
+<element name="E$4" library="WS2812B" package="WS2812B" value="" x="90.694434375" y="73.4949" rot="R300"/>
+<element name="E$5" library="WS2812B" package="WS2812B" value="" x="94.69005625" y="64.520596875" rot="R288"/>
+<element name="E$6" library="WS2812B" package="WS2812B" value="" x="96.732496875" y="54.9117" rot="R276"/>
+<element name="E$7" library="WS2812B" package="WS2812B" value="" x="96.732496875" y="45.0881" rot="R264"/>
+<element name="E$8" library="WS2812B" package="WS2812B" value="" x="94.69005625" y="35.479203125" rot="R252"/>
+<element name="E$9" library="WS2812B" package="WS2812B" value="" x="90.694434375" y="26.5049" rot="R240"/>
+<element name="E$10" library="WS2812B" package="WS2812B" value="" x="84.920278125" y="18.55744375" rot="R228"/>
+<element name="E$11" library="WS2812B" package="WS2812B" value="" x="77.6199375" y="11.984203125" rot="R216"/>
+<element name="E$12" library="WS2812B" package="WS2812B" value="" x="69.112459375" y="7.0724" rot="R204"/>
+<element name="E$13" library="WS2812B" package="WS2812B" value="" x="59.76968125" y="4.036746875" rot="R192"/>
+<element name="E$14" library="WS2812B" package="WS2812B" value="" x="49.9999" y="3.0099" rot="R180"/>
+<element name="E$15" library="WS2812B" package="WS2812B" value="" x="40.23011875" y="4.036746875" rot="R168"/>
+<element name="E$16" library="WS2812B" package="WS2812B" value="" x="30.887340625" y="7.0724" rot="R156"/>
+<element name="E$17" library="WS2812B" package="WS2812B" value="" x="22.3798625" y="11.984203125" rot="R144"/>
+<element name="E$18" library="WS2812B" package="WS2812B" value="" x="15.079521875" y="18.55744375" rot="R132"/>
+<element name="E$19" library="WS2812B" package="WS2812B" value="" x="9.305365625" y="26.5049" rot="R120"/>
+<element name="E$20" library="WS2812B" package="WS2812B" value="" x="5.30974375" y="35.479203125" rot="R108"/>
+<element name="E$21" library="WS2812B" package="WS2812B" value="" x="3.267303125" y="45.0881" rot="R96"/>
+<element name="E$22" library="WS2812B" package="WS2812B" value="" x="3.267303125" y="54.9117" rot="R84"/>
+<element name="E$23" library="WS2812B" package="WS2812B" value="" x="5.30974375" y="64.520596875" rot="R72"/>
+<element name="E$24" library="WS2812B" package="WS2812B" value="" x="9.305365625" y="73.4949" rot="R60"/>
+<element name="E$25" library="WS2812B" package="WS2812B" value="" x="15.079521875" y="81.44235625" rot="R48"/>
+<element name="E$26" library="WS2812B" package="WS2812B" value="" x="22.3798625" y="88.015596875" rot="R36"/>
+<element name="E$27" library="WS2812B" package="WS2812B" value="" x="30.887340625" y="92.9274" rot="R24"/>
+<element name="E$28" library="WS2812B" package="WS2812B" value="" x="40.23011875" y="95.963053125" rot="R12"/>
+<element name="E$29" library="WS2812B" package="WS2812B" value="" x="49.9999" y="96.9899"/>
+<element name="E$30" library="WS2812B" package="WS2812B" value="" x="59.76968125" y="95.963053125" rot="R348"/>
+<element name="E$31" library="WS2812B" package="WS2812B" value="" x="77.603515625" y="80.547228125" rot="R318"/>
+<element name="E$32" library="WS2812B" package="WS2812B" value="" x="83.33895625" y="74.177371875" rot="R306"/>
+<element name="E$33" library="WS2812B" package="WS2812B" value="" x="87.624690625" y="66.754246875" rot="R294"/>
+<element name="E$34" library="WS2812B" package="WS2812B" value="" x="90.273428125" y="58.6023" rot="R282"/>
+<element name="E$35" library="WS2812B" package="WS2812B" value="" x="91.169390625" y="50.077775" rot="R270"/>
+<element name="E$36" library="WS2812B" package="WS2812B" value="" x="90.273421875" y="41.5532625" rot="R258"/>
+<element name="E$37" library="WS2812B" package="WS2812B" value="" x="87.624696875" y="33.401296875" rot="R246"/>
+<element name="E$38" library="WS2812B" package="WS2812B" value="" x="83.33895625" y="25.978171875" rot="R234"/>
+<element name="E$39" library="WS2812B" package="WS2812B" value="" x="77.603528125" y="19.608340625" rot="R222"/>
+<element name="E$40" library="WS2812B" package="WS2812B" value="" x="70.66905" y="14.570146875" rot="R210"/>
+<element name="E$41" library="WS2812B" package="WS2812B" value="" x="62.838621875" y="11.08380625" rot="R198"/>
+<element name="E$42" library="WS2812B" package="WS2812B" value="" x="54.454453125" y="9.301703125" rot="R186"/>
+<element name="E$43" library="WS2812B" package="WS2812B" value="" x="45.88298125" y="9.301696875" rot="R174"/>
+<element name="E$44" library="WS2812B" package="WS2812B" value="" x="37.498815625" y="11.083815625" rot="R162"/>
+<element name="E$45" library="WS2812B" package="WS2812B" value="" x="29.668375" y="14.570153125" rot="R150"/>
+<element name="E$46" library="WS2812B" package="WS2812B" value="" x="22.733915625" y="19.608325" rot="R138"/>
+<element name="E$47" library="WS2812B" package="WS2812B" value="" x="16.998475" y="25.97818125" rot="R126"/>
+<element name="E$48" library="WS2812B" package="WS2812B" value="" x="12.712740625" y="33.40130625" rot="R114"/>
+<element name="E$49" library="WS2812B" package="WS2812B" value="" x="10.06400625" y="41.553253125" rot="R102"/>
+<element name="E$50" library="WS2812B" package="WS2812B" value="" x="9.168040625" y="50.07778125" rot="R90"/>
+<element name="E$51" library="WS2812B" package="WS2812B" value="" x="10.064009375" y="58.602290625" rot="R78"/>
+<element name="E$52" library="WS2812B" package="WS2812B" value="" x="12.7127375" y="66.75425625" rot="R66"/>
+<element name="E$53" library="WS2812B" package="WS2812B" value="" x="16.998478125" y="74.17738125" rot="R54"/>
+<element name="E$54" library="WS2812B" package="WS2812B" value="" x="22.73390625" y="80.5472125" rot="R42"/>
+<element name="E$55" library="WS2812B" package="WS2812B" value="" x="29.668384375" y="85.58540625" rot="R30"/>
+<element name="E$56" library="WS2812B" package="WS2812B" value="" x="37.498809375" y="89.071746875" rot="R18"/>
+<element name="E$57" library="WS2812B" package="WS2812B" value="" x="45.882978125" y="90.853853125" rot="R6"/>
+<element name="E$58" library="WS2812B" package="WS2812B" value="" x="54.454453125" y="90.85385625" rot="R354"/>
+<element name="E$59" library="WS2812B" package="WS2812B" value="" x="62.838615625" y="89.071740625" rot="R342"/>
+<element name="E$60" library="WS2812B" package="WS2812B" value="" x="70.669059375" y="85.5854" rot="R330"/>
+<element name="STM32F7" library="STM32F407Vx_LQFP100" package="LQFP100" value="" x="35.56" y="61.595" rot="MR0"/>
+<element name="PWR" library="RASM7X2" package="RASM7X2" value="" x="66.675" y="29.845" rot="MR0"/>
+<element name="USB-B" library="usb" package="USB-B-SMT" value="" x="33.02" y="28.575" rot="MR90"/>
+<element name="LTC4412" library="linear-technology" package="TSOT23-6" value="" x="61.595" y="41.91" rot="MR0"/>
+<element name="LDO" library="analog-devices" package="SOT23-5" value="" x="50.8" y="51.435" rot="MR270"/>
+<element name="74HCT" library="analog-devices" package="SO14" value="" x="40.64" y="79.375" rot="MR0"/>
 </elements>
 <signals>
-<signal name="S$1">
-<wire x1="0" y1="0" x2="0" y2="50.8" width="0.4064" layer="16"/>
-<wire x1="0" y1="0" x2="100.33" y2="0" width="0.4064" layer="16"/>
-<wire x1="100.33" y1="0" x2="100.33" y2="1.27" width="0.4064" layer="16"/>
-</signal>
 </signals>
 </board>
 </drawing>
