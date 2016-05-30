@@ -1,0 +1,15 @@
+* Z:\home\max\git\knightrider\LTSpiceFiles\autoVoltage.asc
+V1 N004 0 PULSE(0 5 1 0 0 2 2 1)
+XU1 N004 0 0 N003 N005 N002 LTC4412
+M1 N004 N005 N002 N002 Si4465DY
+M2 N001 N003 N002 N002 Si4465DY
+V2 N001 0 4.5
+R3 N002 0 10 pwr=100
+R1 N002 N003 470K
+.model NMOS NMOS
+.model PMOS PMOS
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.mos
+.tran 5
+.lib LTC4412.sub
+.backanno
+.end

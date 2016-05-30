@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6734,54 +6734,6 @@ Created 2014-10-08, Karrer Zheng&lt;br&gt;
 </deviceset>
 </devicesets>
 </library>
-<library name="MLS0805">
-<packages>
-<package name="M0805">
-<description>&lt;b&gt;RESISTOR&lt;/b&gt;&lt;p&gt;
-MELF 0.10 W</description>
-<wire x1="-1.973" y1="0.983" x2="1.973" y2="0.983" width="0.0508" layer="39"/>
-<wire x1="1.973" y1="-0.983" x2="-1.973" y2="-0.983" width="0.0508" layer="39"/>
-<wire x1="-1.973" y1="-0.983" x2="-1.973" y2="0.983" width="0.0508" layer="39"/>
-<wire x1="1.973" y1="0.983" x2="1.973" y2="-0.983" width="0.0508" layer="39"/>
-<wire x1="0.7112" y1="0.635" x2="-0.7112" y2="0.635" width="0.1524" layer="51"/>
-<wire x1="0.7112" y1="-0.635" x2="-0.7112" y2="-0.635" width="0.1524" layer="51"/>
-<smd name="1" x="-0.95" y="0" dx="1.3" dy="1.6" layer="1"/>
-<smd name="2" x="0.95" y="0" dx="1.3" dy="1.6" layer="1"/>
-<text x="-1.27" y="1.27" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.27" y="-2.54" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-1.0414" y1="-0.7112" x2="-0.6858" y2="0.7112" layer="51"/>
-<rectangle x1="0.6858" y1="-0.7112" x2="1.0414" y2="0.7112" layer="51"/>
-<rectangle x1="-0.1999" y1="-0.5999" x2="0.1999" y2="0.5999" layer="35"/>
-</package>
-</packages>
-<symbols>
-<symbol name="L-EU">
-<text x="-1.4986" y="-3.81" size="1.778" layer="95" rot="R90">&gt;NAME</text>
-<text x="3.302" y="-3.81" size="1.778" layer="96" rot="R90">&gt;VALUE</text>
-<rectangle x1="-1.016" y1="-3.556" x2="1.016" y2="3.556" layer="94"/>
-<pin name="2" x="0" y="-5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R90"/>
-<pin name="1" x="0" y="5.08" visible="off" length="short" direction="pas" swaplevel="1" rot="R270"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="MLS0805-4S7-102">
-<gates>
-<gate name="G$1" symbol="L-EU" x="-5.08" y="2.54"/>
-</gates>
-<devices>
-<device name="" package="M0805">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="74HCT125">
 <packages>
 <package name="SO-14DW">
@@ -9156,7 +9108,6 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
 <part name="C66" library="rcl" deviceset="C-EU" device="C0603" value="2.2mu"/>
 <part name="GND129" library="supply1" deviceset="GND" device=""/>
-<part name="FERRITBEAD" library="MLS0805" deviceset="MLS0805-4S7-102" device=""/>
 <part name="PUSHPULL" library="74HCT125" deviceset="74HCT125" device=""/>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="GND130" library="supply1" deviceset="GND" device=""/>
@@ -9214,6 +9165,8 @@ Source: http://focus.ti.com/lit/ds/symlink/tps77001.pdf</description>
 <part name="LDO" library="TPS73633" deviceset="TPS73633" device=""/>
 <part name="C79" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
 <part name="GND139" library="supply1" deviceset="GND" device=""/>
+<part name="C80" library="rcl" deviceset="C-EU" device="C0603" value="100nF"/>
+<part name="GND140" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -10108,13 +10061,6 @@ Schematic with all the LEDs (Type: WS2812B). There are two seperated data circui
 <wire x1="335.28" y1="30.48" x2="340.36" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$23" class="0">
-<segment>
-<pinref part="LED6" gate="G$1" pin="DO"/>
-<pinref part="LED7" gate="G$1" pin="DI"/>
-<wire x1="396.24" y1="30.48" x2="401.32" y2="30.48" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$24" class="0">
 <segment>
 <pinref part="LED7" gate="G$1" pin="DO"/>
@@ -10302,13 +10248,6 @@ Schematic with all the LEDs (Type: WS2812B). There are two seperated data circui
 <pinref part="LED36" gate="G$1" pin="DO"/>
 <pinref part="LED37" gate="G$1" pin="DI"/>
 <wire x1="396.24" y1="157.48" x2="401.32" y2="157.48" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$54" class="0">
-<segment>
-<pinref part="LED37" gate="G$1" pin="DO"/>
-<pinref part="LED38" gate="G$1" pin="DI"/>
-<wire x1="426.72" y1="157.48" x2="431.8" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$55" class="0">
@@ -10775,11 +10714,11 @@ Schematic with all the LEDs (Type: WS2812B). There are two seperated data circui
 <junction x="71.12" y="218.44"/>
 </segment>
 </net>
-<net name="DATA_IN_2_HIGH" class="0">
+<net name="DATA_IN_1_HIGH" class="0">
 <segment>
-<pinref part="PUSHPULL" gate="G$1" pin="3Y"/>
-<wire x1="101.6" y1="203.2" x2="170.18" y2="203.2" width="0.1524" layer="91"/>
-<label x="152.4" y="203.2" size="1.778" layer="95"/>
+<label x="154.94" y="210.82" size="1.778" layer="95"/>
+<wire x1="101.6" y1="210.82" x2="175.26" y2="210.82" width="0.1524" layer="91"/>
+<pinref part="PUSHPULL" gate="G$1" pin="4Y"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
@@ -10787,11 +10726,11 @@ Schematic with all the LEDs (Type: WS2812B). There are two seperated data circui
 <label x="332.74" y="134.62" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="DATA_IN_1_HIGH" class="0">
+<net name="DATA_IN_2_HIGH" class="0">
 <segment>
-<pinref part="PUSHPULL" gate="G$1" pin="4Y"/>
-<wire x1="101.6" y1="210.82" x2="182.88" y2="210.82" width="0.1524" layer="91"/>
-<label x="160.02" y="210.82" size="1.778" layer="95"/>
+<label x="162.56" y="203.2" size="1.778" layer="95"/>
+<wire x1="101.6" y1="203.2" x2="182.88" y2="203.2" width="0.1524" layer="91"/>
+<pinref part="PUSHPULL" gate="G$1" pin="3Y"/>
 </segment>
 <segment>
 <pinref part="R3" gate="G$1" pin="1"/>
@@ -10815,13 +10754,6 @@ Schematic with all the LEDs (Type: WS2812B). There are two seperated data circui
 <label x="144.78" y="215.9" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
-<net name="N$22" class="0">
-<segment>
-<pinref part="LED6" gate="G$1" pin="DI"/>
-<wire x1="370.84" y1="30.48" x2="370.84" y2="12.7" width="0.1524" layer="91"/>
-<pinref part="R3" gate="G$1" pin="2"/>
-</segment>
-</net>
 <net name="N$32" class="0">
 <segment>
 <pinref part="LED15" gate="G$1" pin="DO"/>
@@ -10834,10 +10766,10 @@ Schematic with all the LEDs (Type: WS2812B). There are two seperated data circui
 </net>
 <net name="N$47" class="0">
 <segment>
-<pinref part="LED36" gate="G$1" pin="DI"/>
-<wire x1="370.84" y1="157.48" x2="370.84" y2="134.62" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="370.84" y1="134.62" x2="365.76" y2="134.62" width="0.1524" layer="91"/>
+<pinref part="LED38" gate="G$1" pin="DI"/>
+<wire x1="365.76" y1="134.62" x2="431.8" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="431.8" y1="134.62" x2="431.8" y2="157.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -10848,6 +10780,28 @@ Schematic with all the LEDs (Type: WS2812B). There are two seperated data circui
 <pinref part="LED46" gate="G$1" pin="DI"/>
 <wire x1="678.18" y1="182.88" x2="218.44" y2="182.88" width="0.1524" layer="91"/>
 <wire x1="218.44" y1="182.88" x2="218.44" y2="220.98" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$52" class="0">
+<segment>
+<pinref part="LED36" gate="G$1" pin="DI"/>
+<pinref part="LED35" gate="G$1" pin="DO"/>
+<wire x1="370.84" y1="157.48" x2="365.76" y2="157.48" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$22" class="0">
+<segment>
+<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="LED7" gate="G$1" pin="DI"/>
+<wire x1="370.84" y1="12.7" x2="401.32" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="401.32" y1="12.7" x2="401.32" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$23" class="0">
+<segment>
+<pinref part="LED6" gate="G$1" pin="DI"/>
+<pinref part="LED5" gate="G$1" pin="DO"/>
+<wire x1="370.84" y1="30.48" x2="365.76" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -10870,18 +10824,18 @@ LTC4412 controls two mosfets. Diode for overvoltage protection of the USB port.<
 <instance part="R2" gate="G$1" x="104.14" y="50.8" rot="R90"/>
 <instance part="P+5" gate="1" x="121.92" y="111.76"/>
 <instance part="GND128" gate="1" x="154.94" y="82.55"/>
-<instance part="+3V6" gate="G$1" x="219.71" y="106.68"/>
+<instance part="+3V6" gate="G$1" x="194.31" y="106.68"/>
 <instance part="C66" gate="G$1" x="184.15" y="88.9"/>
 <instance part="GND129" gate="1" x="184.15" y="77.47"/>
-<instance part="FERRITBEAD" gate="G$1" x="203.2" y="96.52" rot="R90"/>
 <instance part="T1" gate="G$1" x="68.58" y="99.06" rot="R90"/>
 <instance part="T2" gate="G$1" x="68.58" y="81.28" rot="R90"/>
 <instance part="D3" gate="1" x="27.94" y="99.06"/>
 <instance part="0.5" gate="G$1" x="48.26" y="99.06"/>
-<instance part="4" gate="G$1" x="40.64" y="63.5"/>
+<instance part="4" gate="G$1" x="33.02" y="63.5"/>
 <instance part="LDO" gate="G$1" x="154.94" y="96.52"/>
 <instance part="C79" gate="G$1" x="129.54" y="88.9"/>
 <instance part="GND139" gate="1" x="129.54" y="78.74"/>
+<instance part="C80" gate="G$1" x="50.8" y="60.96"/>
 </instances>
 <busses>
 </busses>
@@ -10891,8 +10845,9 @@ LTC4412 controls two mosfets. Diode for overvoltage protection of the USB port.<
 <pinref part="LTC4412" gate="G$1" pin="CTL"/>
 <wire x1="55.88" y1="58.42" x2="53.34" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="GND122" gate="1" pin="GND"/>
-<wire x1="53.34" y1="58.42" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="58.42" x2="53.34" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="LTC4412" gate="G$1" pin="GND"/>
+<wire x1="53.34" y1="55.88" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="53.34" x2="53.34" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="50.8" x2="53.34" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="53.34" x2="53.34" y2="53.34" width="0.1524" layer="91"/>
@@ -10906,6 +10861,9 @@ LTC4412 controls two mosfets. Diode for overvoltage protection of the USB port.<
 <junction x="25.4" y="58.42"/>
 <wire x1="25.4" y1="50.8" x2="53.34" y2="50.8" width="0.1524" layer="91"/>
 <junction x="53.34" y="50.8"/>
+<pinref part="C80" gate="G$1" pin="2"/>
+<wire x1="50.8" y1="55.88" x2="53.34" y2="55.88" width="0.1524" layer="91"/>
+<junction x="53.34" y="55.88"/>
 </segment>
 <segment>
 <pinref part="GND128" gate="1" pin="GND"/>
@@ -10931,8 +10889,11 @@ LTC4412 controls two mosfets. Diode for overvoltage protection of the USB port.<
 <pinref part="T2" gate="G$1" pin="D"/>
 <wire x1="53.34" y1="81.28" x2="63.5" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="4" gate="G$1" pin="O"/>
-<wire x1="50.8" y1="63.5" x2="53.34" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="63.5" x2="53.34" y2="63.5" width="0.1524" layer="91"/>
 <junction x="53.34" y="63.5"/>
+<pinref part="C80" gate="G$1" pin="1"/>
+<junction x="43.18" y="63.5"/>
+<wire x1="43.18" y1="63.5" x2="50.8" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$63" class="0">
@@ -10997,23 +10958,16 @@ LTC4412 controls two mosfets. Diode for overvoltage protection of the USB port.<
 <junction x="129.54" y="96.52"/>
 </segment>
 </net>
-<net name="N$62" class="0">
+<net name="+3V3" class="0">
 <segment>
+<pinref part="+3V6" gate="G$1" pin="+3V3"/>
+<wire x1="194.31" y1="96.52" x2="194.31" y2="104.14" width="0.1524" layer="91"/>
 <wire x1="170.18" y1="96.52" x2="184.15" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="184.15" y1="96.52" x2="184.15" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="C66" gate="G$1" pin="1"/>
-<pinref part="FERRITBEAD" gate="G$1" pin="1"/>
-<wire x1="184.15" y1="96.52" x2="198.12" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="184.15" y1="96.52" x2="194.31" y2="96.52" width="0.1524" layer="91"/>
 <junction x="184.15" y="96.52"/>
 <pinref part="LDO" gate="G$1" pin="OUT"/>
-</segment>
-</net>
-<net name="+3V3" class="0">
-<segment>
-<pinref part="FERRITBEAD" gate="G$1" pin="2"/>
-<wire x1="208.28" y1="96.52" x2="219.71" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="+3V6" gate="G$1" pin="+3V3"/>
-<wire x1="219.71" y1="96.52" x2="219.71" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$69" class="0">
@@ -11023,11 +10977,15 @@ LTC4412 controls two mosfets. Diode for overvoltage protection of the USB port.<
 <wire x1="30.48" y1="99.06" x2="38.1" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$70" class="0">
+<net name="VBUS_S" class="0">
 <segment>
 <pinref part="0.5" gate="G$1" pin="O"/>
 <pinref part="T1" gate="G$1" pin="D"/>
 <wire x1="58.42" y1="99.06" x2="63.5" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="99.06" x2="58.42" y2="114.3" width="0.1524" layer="91"/>
+<junction x="58.42" y="99.06"/>
+<wire x1="58.42" y1="114.3" x2="40.64" y2="114.3" width="0.1524" layer="91"/>
+<label x="40.64" y="114.3" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VBUS" class="0">
@@ -11041,7 +10999,7 @@ LTC4412 controls two mosfets. Diode for overvoltage protection of the USB port.<
 <segment>
 <pinref part="4" gate="G$1" pin="I"/>
 <pinref part="K1" gate="G$1" pin="1"/>
-<wire x1="30.48" y1="63.5" x2="20.32" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="63.5" x2="20.32" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
@@ -11052,7 +11010,7 @@ LTC4412 controls two mosfets. Diode for overvoltage protection of the USB port.<
 A STM32745VE is used as a microcontroller</description>
 <plain>
 <text x="17.78" y="76.2" size="1.778" layer="97">C73: 1 μF tantalum or ceramic</text>
-<text x="439.42" y="43.18" size="1.778" layer="98">möglichst nah am MCu bei PCB</text>
+<text x="401.32" y="68.58" size="1.778" layer="98">möglichst nah am MCu bei PCB</text>
 </plain>
 <instances>
 <instance part="MCU" gate="G$1" x="185.42" y="93.98"/>
@@ -11539,7 +11497,7 @@ USB-Connection</description>
 <instance part="GND121" gate="1" x="38.1" y="22.86"/>
 <instance part="C67" gate="G$1" x="38.1" y="30.48" rot="R180"/>
 <instance part="GND131" gate="1" x="83.82" y="33.02"/>
-<instance part="C68" gate="G$1" x="45.72" y="30.48" rot="MR180"/>
+<instance part="C68" gate="G$1" x="111.76" y="66.04" rot="MR180"/>
 <instance part="R4" gate="G$1" x="129.54" y="53.34"/>
 <instance part="R5" gate="G$1" x="129.54" y="43.18"/>
 <instance part="R6" gate="G$1" x="142.24" y="33.02" rot="R270"/>
@@ -11548,6 +11506,7 @@ USB-Connection</description>
 <instance part="GND133" gate="1" x="142.24" y="22.86"/>
 <instance part="GND134" gate="1" x="152.4" y="22.86"/>
 <instance part="GND135" gate="1" x="162.56" y="22.86"/>
+<instance part="GND140" gate="1" x="111.76" y="60.96"/>
 </instances>
 <busses>
 </busses>
@@ -11583,9 +11542,10 @@ USB-Connection</description>
 <pinref part="C67" gate="G$1" pin="1"/>
 <wire x1="38.1" y1="27.94" x2="38.1" y2="25.4" width="0.1524" layer="91"/>
 <junction x="38.1" y="25.4"/>
+</segment>
+<segment>
 <pinref part="C68" gate="G$1" pin="1"/>
-<wire x1="45.72" y1="27.94" x2="45.72" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="45.72" y1="25.4" x2="38.1" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="GND140" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="D-_TMP" class="0">
@@ -11606,27 +11566,27 @@ USB-Connection</description>
 <net name="D+" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
-<wire x1="134.62" y1="43.18" x2="152.4" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="43.18" x2="142.24" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="142.24" y1="43.18" x2="152.4" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="152.4" y1="43.18" x2="172.72" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="C69" gate="G$1" pin="2"/>
 <wire x1="152.4" y1="38.1" x2="152.4" y2="43.18" width="0.1524" layer="91"/>
 <junction x="152.4" y="43.18"/>
 <label x="170.18" y="43.18" size="1.778" layer="95"/>
+<pinref part="R6" gate="G$1" pin="1"/>
+<wire x1="142.24" y1="38.1" x2="142.24" y2="43.18" width="0.1524" layer="91"/>
+<junction x="142.24" y="43.18"/>
 </segment>
 </net>
 <net name="D-" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="134.62" y1="53.34" x2="142.24" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="C70" gate="G$1" pin="2"/>
-<wire x1="142.24" y1="53.34" x2="162.56" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="53.34" x2="162.56" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="53.34" x2="172.72" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="162.56" y1="38.1" x2="162.56" y2="53.34" width="0.1524" layer="91"/>
 <junction x="162.56" y="53.34"/>
 <label x="170.18" y="53.34" size="1.778" layer="95"/>
-<pinref part="R6" gate="G$1" pin="1"/>
-<wire x1="142.24" y1="38.1" x2="142.24" y2="53.34" width="0.1524" layer="91"/>
-<junction x="142.24" y="53.34"/>
 </segment>
 </net>
 <net name="D+_TMP" class="0">
@@ -11638,24 +11598,15 @@ USB-Connection</description>
 </net>
 <net name="VBUS" class="0">
 <segment>
-<wire x1="114.3" y1="27.94" x2="106.68" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="27.94" x2="60.96" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="114.3" y1="27.94" x2="60.96" y2="27.94" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="27.94" x2="60.96" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="C67" gate="G$1" pin="2"/>
 <pinref part="X1" gate="G$1" pin="VBUS"/>
 <wire x1="25.4" y1="48.26" x2="38.1" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="38.1" y1="48.26" x2="45.72" y2="48.26" width="0.1524" layer="91"/>
 <junction x="38.1" y="48.26"/>
-<wire x1="45.72" y1="48.26" x2="60.96" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="48.26" x2="60.96" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="48.26" x2="38.1" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="C68" gate="G$1" pin="2"/>
-<wire x1="45.72" y1="35.56" x2="45.72" y2="48.26" width="0.1524" layer="91"/>
-<junction x="45.72" y="48.26"/>
 <label x="109.22" y="25.4" size="1.778" layer="95"/>
-<pinref part="D1" gate="G$1" pin="VDD"/>
-<wire x1="101.6" y1="48.26" x2="106.68" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="106.68" y1="48.26" x2="106.68" y2="27.94" width="0.1524" layer="91"/>
-<junction x="106.68" y="27.94"/>
 </segment>
 </net>
 <net name="N$68" class="0">
@@ -11681,6 +11632,16 @@ USB-Connection</description>
 <wire x1="78.74" y1="45.72" x2="86.36" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="D1" gate="G$1" pin="2"/>
 <wire x1="86.36" y1="45.72" x2="86.36" y2="43.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="VBUS_S" class="0">
+<segment>
+<pinref part="D1" gate="G$1" pin="VDD"/>
+<wire x1="101.6" y1="48.26" x2="106.68" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="106.68" y1="48.26" x2="106.68" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="C68" gate="G$1" pin="2"/>
+<wire x1="111.76" y1="71.12" x2="106.68" y2="71.12" width="0.1524" layer="91"/>
+<label x="106.68" y="60.96" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>
